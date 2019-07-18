@@ -37,6 +37,6 @@ app.post('/postReport', function (req, res) {
 // app.get('/postReport2', function (req, res) {
 //   res.send('hello, express');
 // });
-
+console.log("web-server start success!");
 
 app.listen(3001);
