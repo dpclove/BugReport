@@ -14,7 +14,7 @@
       "filename": "logs/app.log",
       "maxLogSize": 10485760,
       "pattern": "-yyyy-MM-dd",
-      "numBackups": 3
+      "numBackups": 5
     },
     "errorFile":
     {
