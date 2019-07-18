@@ -1,5 +1,12 @@
 var express = require('express');
-var app = express.createServer();
+var app = express();
+var log4js = require('log4js');
+log4js.configure('./config/log4js.json');
+
+var logger = log4js.getLogger('index');
+// logger.info("11111111");
+
+// var indexRouter = require("./routes/index");
 
 app.configure(function(){
   app.use(express.methodOverride());
@@ -22,6 +29,14 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
-console.log("Web server has started.\nPlease log on http://127.0.0.1:3001/index.html");
+app.post('/postReport', function (req, res) {
+  logger.info(req.body);
+  // logger.debug('hello world');
+  res.send('hello, express');
+});
+// app.get('/postReport2', function (req, res) {
+//   res.send('hello, express');
+// });
+
 
 app.listen(3001);
