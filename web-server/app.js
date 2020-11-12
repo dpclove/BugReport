@@ -36,6 +36,14 @@ app.post('/postReport', function (req, res) {
   }
   res.send({msg:'PostReport Success'});
 });
+
+app.get('/testJson', function (req, res) {
+   var ip = req.ip
+   if(ip.substr(0, 7) == "::ffff:"){
+   	ip = ip.substr(7);
+   }
+   res.send({msg:'TestJson Success',query:req.query,ip:ip});
+});
 // app.get('/postReport2', function (req, res) {
 //   res.send('hello, express');
 // });
